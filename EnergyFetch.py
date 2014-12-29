@@ -7,9 +7,9 @@ def main(args):
    for line in meter:
       if line.startswith('#d'):
          fields = line.split(',')
-         watts = fields[3] / 10
-         volts = fields[4] / 10
-         amps = fields[5] / 1000
+         watts = float(fields[3]) / 10
+         volts = float(fields[4]) / 10
+         amps = float(fields[5]) / 1000
 
          print("W: " + str(watts))
          print("V: " + str(volts))
