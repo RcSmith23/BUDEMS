@@ -2,10 +2,18 @@
 import serial
 
 def main(args):
-   srl  = serial.Serial('/dev/ttyUSB0',115200)
-   srl.write("L,W,3,E,,1;")
-   for line in srl:
+   meter  = serial.Serial('/dev/ttyUSB0',115200)
+   meter.write("L,W,3,E,,1;")
+   for line in meter:
       if line.startswith('#d'):
-         print(line)
+         fields = line.split(',')
+         watts = fields[3]
+         volts = fields[4]
+         amps = fields[5]
 
+         print("W: " + str(watts))
+         print("V: " + str(volts))
+         print("A: " + str(amps))
+                    
+    
 main(0)
