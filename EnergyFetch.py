@@ -10,12 +10,12 @@ def main(args):
          watts = float(fields[3]) / 10
          volts = float(fields[4]) / 10
          amps = float(fields[5]) / 1000
-         pf = float(fields[16]) / 100
+         #pf = float(fields[16]) / 100
 
          print("W: " + str(watts))
          print("V: " + str(volts))
          print("A: " + str(amps))
-         print("Power Factor: " + str(pf))
+         #print("Power Factor: " + str(pf))
                     
     
 main(0)
