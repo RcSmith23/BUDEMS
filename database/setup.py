@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 import MySQLdb as mdb
 import sys
+import os
 
-db_name = 'energy_research'
 tables = {}
 
 tables[0] = '''CREATE TABLE IF NOT EXISTS machines (
@@ -51,8 +51,12 @@ tables[4] = '''CREATE TABLE IF NOT EXISTS benchmark_relation (
     FOREIGN KEY (benchmark_id) REFERENCES benchmarks(id)
     );'''
 
+   db_host = os.getenv('DB_HOST')
+   db_user = os.getenv('DB_USERNAME')
+   db_pass = os.getenv('DB_PASS')
+   db_name = 'energy_research'
 try:
-    con = mdb.connect('beast', 'rsmith23', 'rsmith231', db_name)
+    con = mdb.connect(db_host, db_user, db_pass, db_name)
     cur = con.cursor()
     for t in xrange(len(tables)):
         try:
