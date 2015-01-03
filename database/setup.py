@@ -54,7 +54,7 @@ tables[4] = '''CREATE TABLE IF NOT EXISTS benchmark_relation (
    db_host = os.getenv('DB_HOST')
    db_user = os.getenv('DB_USERNAME')
    db_pass = os.getenv('DB_PASS')
-   db_name = 'energy_research'
+   db_name = os.getenv('DB_NAME')
 try:
     con = mdb.connect(db_host, db_user, db_pass, db_name)
     cur = con.cursor()
