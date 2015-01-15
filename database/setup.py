@@ -6,12 +6,12 @@ import os
 
 tables = {}
 
-tables[0] = """CREATE TABLE IF NOT EXISTS machines (
+tables[0] = '''CREATE TABLE IF NOT EXISTS machines (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name TEXT NOT NULL,
     cores INT,
     memory INT
-    );"""
+    );'''
 
 tables[1] = '''CREATE TABLE IF NOT EXISTS benchmarks (
     id INT PRIMARY KEY AUTO_INCREMENT,
