@@ -6,15 +6,15 @@ import os
 
 tables = {}
 
-tables[0] = '''CREATE TABLE IF NOT EXISTS machines (
-    id INT PRIMARY KEY,
+tables[0] = """CREATE TABLE IF NOT EXISTS machines (
+    id INT PRIMARY KEY AUTO_INCREMENT,
     name TEXT NOT NULL,
     cores INT,
-    memory INT
-    );'''
+    memory BIGINT
+    );"""
 
 tables[1] = '''CREATE TABLE IF NOT EXISTS benchmarks (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     name TEXT NOT NULL,
     mem_intensive BOOL,
     cpu_intensive BOOL,
@@ -35,16 +35,15 @@ tables[2] = '''CREATE TABLE IF NOT EXISTS recordings (
     );'''
 
 tables[3] = '''CREATE TABLE IF NOT EXISTS instances (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     start_time TIMESTAMP NOT NULL,
     end_time TIMESTAMP NOT NULL,
     machine_id INT NOT NULL,
     FOREIGN KEY (machine_id) REFERENCES machines(id)
     );'''
 
-
 tables[4] = '''CREATE TABLE IF NOT EXISTS benchmark_relation (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     instance_id INT NOT NULL,
     benchmark_id INT NOT NULL,
     FOREIGN KEY (instance_id) REFERENCES instances(id),
