@@ -27,7 +27,7 @@ def main():
       try:
          row = cur.execute("SELECT TOP 1 FROM machines WHERE name='%s'" % \
                  uname()[1])
-      except: mdb.Error, e:
+      except mdb.Error, e:
          print "Error %d: %s" % (e.args[0], e.args[1])
 
       m_ID = row[0]
