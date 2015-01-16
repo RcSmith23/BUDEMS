@@ -69,5 +69,5 @@ except mdb.Error, e:
     sys.exit(1)
 
 finally:
-     if con:
+    if con:
         con.close()
