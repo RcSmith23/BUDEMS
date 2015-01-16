@@ -36,8 +36,8 @@ tables[2] = '''CREATE TABLE IF NOT EXISTS recordings (
 
 tables[3] = '''CREATE TABLE IF NOT EXISTS instances (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    start_time TIMESTAMP NOT NULL,
-    end_time TIMESTAMP NOT NULL,
+    start_time DATETIME(6) NOT NULL,
+    end_time DATETIME(6) NOT NULL,
     machine_id INT NOT NULL,
     FOREIGN KEY (machine_id) REFERENCES machines(id)
     );'''
