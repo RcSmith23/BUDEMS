@@ -23,7 +23,7 @@ tables[1] = '''CREATE TABLE IF NOT EXISTS benchmarks (
 
 tables[2] = '''CREATE TABLE IF NOT EXISTS recordings (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    time_stamp TIMESTAMP NOT NULL,
+    time_stamp DATETIME(6) NOT NULL,
     watts DOUBLE(4,1) NOT NULL,
     amps DOUBLE(4,1) NOT NULL,
     volts DOUBLE(4,1) NOT NULL,
